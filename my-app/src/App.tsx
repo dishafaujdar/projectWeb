@@ -1,4 +1,6 @@
 import { ChevronDown } from "lucide-react";
+import photoes1 from "./assets/photoes/image.png";
+import photoes2 from "./assets/photoes/image2.png";
 
 export default function Home() {
   return (
@@ -123,72 +125,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Clients Section */}
-        {/* <section className="bg-gray-200/10 backdrop-blur-sm py-12">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center text-2xl font-semibold mb-10">
-              We are the church management solution for some of the
-              fastest-growing ministries
-            </h2>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div
-                  key={i}
-                  className="grayscale hover:grayscale-0 transition-all duration-300"
-                >
-                  <img
-                    src={`/placeholder.svg?height=40&width=120&text=Church${i}`}
-                    alt={`Church Partner ${i}`}
-                    width={120}
-                    height={40}
-                    className="h-10 object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
-        {/* How It Works Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-              How It Works
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Streamlined Member Management",
-                  description:
-                    "Easily track attendance, manage member profiles, and organize small groups with our intuitive interface.",
-                  icon: "👥",
-                },
-                {
-                  title: "Simplified Event Planning",
-                  description:
-                    "Create, schedule, and manage church events with automated reminders and registration tracking.",
-                  icon: "📅",
-                },
-                {
-                  title: "Secure Online Giving",
-                  description:
-                    "Process donations securely, generate tax statements, and track giving patterns with detailed analytics.",
-                  icon: "💰",
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-[#1a1a3a] p-6 rounded-lg border border-gray-800 hover:border-[#8a5cf6] transition-colors duration-200"
-                >
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Features Section */}
         {/* <section className="py-20 bg-gradient-to-b from-[#1a1a3a]/50 to-[#0a0a1a]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,61 +185,51 @@ export default function Home() {
           </div>
         </section> */}
 
-        {/* Testimonials */}
-        {/* <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-              What Church Leaders Say
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  quote:
-                    "Shepherdly has transformed how we manage our church. The member management and communication tools have saved us countless hours.",
-                  author: "Pastor Michael Johnson",
-                  church: "Grace Community Church",
-                },
-                {
-                  quote:
-                    "The giving platform is seamless and has increased our online donations by 40%. Our congregation loves how easy it is to use.",
-                  author: "Sarah Williams",
-                  church: "Harvest Fellowship",
-                },
-                {
-                  quote:
-                    "As a multi-campus church, Shepherdly helps us stay organized and connected. The reporting features give us valuable insights into our growth.",
-                  author: "Pastor David Chen",
-                  church: "Cornerstone Church",
-                },
-              ].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="bg-[#1a1a3a] p-6 rounded-lg border border-gray-800 hover:border-[#8a5cf6] transition-colors duration-200"
-                >
-                  <div className="mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="inline-block h-5 w-5 text-[#8a5cf6]"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-gray-300 mb-6">"{testimonial.quote}"</p>
-                  <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-gray-400 text-sm">
-                      {testimonial.church}
-                    </p>
-                  </div>
+        {/**The challenge */}
+        <section className="py-20 ">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 m-40">
+            <div className="flex gap-50 ">
+              <span className="text-5xl font-bold ">The challenge</span>
+              <span className="text-xl">
+                As an early-stage startup, Shepardly faced challenges with their current website, which failed to effectively convey their product story or establish legitimacy due to its inadequate design quality.
+              </span>
+              </div>
+
+              <div className="mt-20 mb-20">
+              <img 
+              src={photoes1}
+              alt="image from amply"
+              width={5000}
+              height={700} >
+              </img>
+              </div>
+
+              <div className="mt-30">
+              <div className="flex gap-50">
+              <span className="text-5xl font-bold ">The solution</span>
+              <span className="text-xl">
+              Amply addressed these issues by redesigning Shepardly's website to more accurately and compellingly tell their product story. We focused on elevating the design quality to reflect a professional and credible image that could build trust with visitors. This involved enhancing visual elements, improving content structure, and ensuring the website's overall aesthetics aligned with Shepardly’s brand and vision. By doing so, we helped Shepardly project the legitimacy and innovative spirit needed to engage their target audience effectively.
+              </span>
+              </div>
+
+              <div className="mt-20 mb-20">
+                <div className=" bg-white border rounded-2xl w-[1460px] h-[200px] mb-10 text-black text-9xl">
+                   <p className="ml-50 mt-10">''</p>
                 </div>
-              ))}
+              <img 
+              src={photoes2}
+              alt="image2 from amply"
+              width={5000}
+              height={700} >
+              </img>
+              
             </div>
+              </div>
           </div>
-        </section> */}
+        </section>
+
+
+        {/**The solution */}
 
         {/* Our latest work */}
         {/* FIXME: Add transition border and ask for pagination */}
@@ -376,8 +302,6 @@ export default function Home() {
         </div>
         </section>
 
-
-
         {/* Lets work together Section */}
         {/**FIXME: add blue gradient */}
         <div className="relative text-center py-20 px-6 overflow-hidden ">
@@ -430,7 +354,7 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        {/* FIXME: add link to each  */}
+        {/* FIXME: add link to each , add amply at the end */}
         <footer className="bg-gradient-to-tr from-[#0a0a1a] via-blue-950 to-[#0a0a1a] py-12 pb-80">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
