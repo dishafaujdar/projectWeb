@@ -3,145 +3,139 @@ import { ChevronDown } from "lucide-react";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a1a] bg-gradient-to-br from-[#0a0a1a] to-[#1a1a3a] text-white overflow-hidden relative">
-      <div>
-        {/* Stars background */}
-        <div className="absolute inset-0 z-0">
-          {Array.from({ length: 500 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-white"
-              style={{
-                width: Math.random() * 3 + 1 + "px",
-                height: Math.random() * 3 + 1 + "px",
-                top: Math.random() * 100 + "%",
-                left: Math.random() * 100 + "%",
-                opacity: Math.random() * 0.5 + 0.3,
-              }}
-            />
-          ))}
+      {/* Stars background */}
+      <div className="absolute inset-0 z-0">
+        {Array.from({ length: 800 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white"
+            style={{
+              width: Math.random() * 3 + 1 + "px",
+              height: Math.random() * 3 + 1 + "px",
+              top: Math.random() * 100 + "%",
+              left: Math.random() * 100 + "%",
+              opacity: Math.random() * 0.5 + 0.3,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0a1a] z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Navigation */}
+        <div className="bg-gradient-to-r from-[#0a0a1a] via-blue-950 to-[#0a0a1a] p-1 text-center text-white font-medium">
+          {" "}
+          New: Why B2B brands are switching from WordPress to Webflow 🔥{" "}
         </div>
-
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0a1a] z-0"></div>
-
-        {/* Content */}
-        <div className="relative z-10">
-          {/* Navigation ✅*/}
-          <div className="bg-gradient-to-r from-[#0a0a1a] via-blue-900 to-[#0a0a1a] p-1 text-center text-white font-medium">
-            New: Why B2B brands are switching from WordPress to Webflow 🔥{" "}
-          </div>
-
-          <header className="bg-[#0a0a1a]/80 backdrop-blur-md sticky top-0 z-50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center justify-between h-16">
-                <div className="flex items-center">
-                  <a
-                    href="https://www.infrasity.com/"
-                    className="flex items-center space-x-2"
-                  >
-                    <span className="text-[#8a5cf6] font-bold text-xl">
-                      INFRASITY
-                    </span>
-                  </a>
-                </div>
-                <nav className="hidden md:flex space-x-8 text-bold">
-                  <a
-                    href="https://www.infrasity.com/"
-                    className="text-gray-300 hover:text-white"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="https://www.infrasity.com/blog"
-                    className="text-gray-300 hover:text-white"
-                  >
-                    Blog
-                  </a>
-                  <a
-                    href="https://www.infrasity.com/case-studies"
-                    className="text-gray-300 hover:text-white"
-                  >
-                    Case Studies
-                  </a>
-                  <div className="relative group">
-                    <button className="flex items-center text-gray-300 hover:text-white">
-                      Services <ChevronDown className="ml-1 h-4 w-4" />
-                    </button>
-                    <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-[#1a1a3a] ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                      <div className="py-1">
-                        <a
-                          href="https://www.infrasity.com/services/service-video-production"
-                          className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a]"
-                        >
-                          Video Producation
-                        </a>
-                        <a
-                          href="https://www.infrasity.com/services/service-video-production"
-                          className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a]"
-                        >
-                          Technical Writing Skills
-                        </a>
-                      </div>
+        <header className="border-b border-gray-800 bg-[#0a0a1a]/80 backdrop-blur-md sticky top-0 z-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <div className="flex items-center">
+                <a href="/" className="flex items-center space-x-2">
+                  <span className="text-[#8a5cf6] font-bold text-xl">
+                    SHEPHERDLY
+                  </span>
+                </a>
+              </div>
+              <nav className="hidden md:flex space-x-8">
+                <a href="/" className="text-gray-300 hover:text-white">
+                  Home
+                </a>
+                <a href="/blog" className="text-gray-300 hover:text-white">
+                  Blog
+                </a>
+                <a
+                  href="/case-studies"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Case Studies
+                </a>
+                <div className="relative group">
+                  <button className="flex items-center text-gray-300 hover:text-white">
+                    Services <ChevronDown className="ml-1 h-4 w-4" />
+                  </button>
+                  <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-[#1a1a3a] ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1">
+                      <a
+                        href="/services/member-management"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a]"
+                      >
+                        Member Management
+                      </a>
+                      <a
+                        href="/services/event-planning"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a]"
+                      >
+                        Event Planning
+                      </a>
+                      <a
+                        href="/services/giving"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a]"
+                      >
+                        Giving & Donations
+                      </a>
                     </div>
                   </div>
-                  <a
-                    href="https://www.infrasity.com/faq"
-                    className="text-gray-300 hover:text-white"
-                  >
-                    FAQ
-                  </a>
-                  <a
-                    href="https://www.infrasity.com/about"
-                    className="text-gray-300 hover:text-white"
-                  >
-                    About Us
-                  </a>
-                </nav>
-                <div>
-                  <a
-                    href="https://www.infrasity.com/contact"
-                    className="bg-[#8a5cf6] hover:bg-[#7c4dff] text-white px-4 py-2 rounded-md transition-colors duration-200"
-                  >
-                    Book a Free Demo
-                  </a>
                 </div>
+                <a href="/faq" className="text-gray-300 hover:text-white">
+                  FAQ
+                </a>
+                <a href="/about-us" className="text-gray-300 hover:text-white">
+                  About Us
+                </a>
+              </nav>
+              <div>
+                <a
+                  href="/demo"
+                  className="bg-[#8a5cf6] hover:bg-[#7c4dff] text-white px-4 py-2 rounded-md transition-colors duration-200"
+                >
+                  Book a Free Demo
+                </a>
               </div>
             </div>
-          </header>
+          </div>
+        </header>
 
-          {/* Hero Section */}
-          <section className="py-20 md:py-32 text-center relative">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Church Management{" "}
-                <span className="text-[#8a5cf6]">Solutions</span> for
-                <br />
-                <span className="text-[#f0f0f0]">Modern</span>{" "}
-                <span className="text-[#8a5cf6]">Ministries</span>
-              </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-                At Shepherdly, we empower churches with intuitive management
-                tools, driving growth and engagement across your congregation
-                and community.
-              </p>
-              <a
-                href="/demo"
-                className="bg-[#8a5cf6] hover:bg-[#7c4dff] text-white px-6 py-3 rounded-md text-lg font-medium transition-colors duration-200"
-              >
-                Book a Free Demo
-              </a>
-            </div>
-          </section>
+        {/* Hero Section */}
+        <section className="py-20 md:py-32 text-center relative">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Church Management{" "}
+              <span className="text-[#8a5cf6]">Solutions</span> for
+              <br />
+              <span className="text-[#f0f0f0]">Modern</span>{" "}
+              <span className="text-[#8a5cf6]">Ministries</span>
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+              At Shepherdly, we empower churches with intuitive management
+              tools, driving growth and engagement across your congregation and
+              community.
+            </p>
+            <a
+              href="/demo"
+              className="bg-[#8a5cf6] hover:bg-[#7c4dff] text-white px-6 py-3 rounded-md text-lg font-medium transition-colors duration-200"
+            >
+              Book a Free Demo
+            </a>
+          </div>
+        </section>
 
-          {/* Clients Section
-        <section className="bg-gray-200/10 backdrop-blur-sm py-12">
+        {/* Clients Section */}
+        {/* <section className="bg-gray-200/10 backdrop-blur-sm py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-center text-2xl font-semibold mb-10">
-              We are the church management solution for some of the fastest-growing ministries
+              We are the church management solution for some of the
+              fastest-growing ministries
             </h2>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
               {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="grayscale hover:grayscale-0 transition-all duration-300">
+                <div
+                  key={i}
+                  className="grayscale hover:grayscale-0 transition-all duration-300"
+                >
                   <img
                     src={`/placeholder.svg?height=40&width=120&text=Church${i}`}
                     alt={`Church Partner ${i}`}
@@ -155,57 +149,59 @@ export default function Home() {
           </div>
         </section> */}
 
-          {/* How It Works Section */}
-          <section className="py-20">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-                How It Works
-              </h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                {[
-                  {
-                    title: "Streamlined Member Management",
-                    description:
-                      "Easily track attendance, manage member profiles, and organize small groups with our intuitive interface.",
-                    icon: "👥",
-                  },
-                  {
-                    title: "Simplified Event Planning",
-                    description:
-                      "Create, schedule, and manage church events with automated reminders and registration tracking.",
-                    icon: "📅",
-                  },
-                  {
-                    title: "Secure Online Giving",
-                    description:
-                      "Process donations securely, generate tax statements, and track giving patterns with detailed analytics.",
-                    icon: "💰",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-[#1a1a3a] p-6 rounded-lg border border-gray-800 hover:border-[#8a5cf6] transition-colors duration-200"
-                  >
-                    <div className="text-4xl mb-4">{item.icon}</div>
-                    <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                    <p className="text-gray-300">{item.description}</p>
-                  </div>
-                ))}
-              </div>
+        {/* How It Works Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+              How It Works
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Streamlined Member Management",
+                  description:
+                    "Easily track attendance, manage member profiles, and organize small groups with our intuitive interface.",
+                  icon: "👥",
+                },
+                {
+                  title: "Simplified Event Planning",
+                  description:
+                    "Create, schedule, and manage church events with automated reminders and registration tracking.",
+                  icon: "📅",
+                },
+                {
+                  title: "Secure Online Giving",
+                  description:
+                    "Process donations securely, generate tax statements, and track giving patterns with detailed analytics.",
+                  icon: "💰",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-[#1a1a3a] p-6 rounded-lg border border-gray-800 hover:border-[#8a5cf6] transition-colors duration-200"
+                >
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                  <p className="text-gray-300">{item.description}</p>
+                </div>
+              ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Features Section */}
-          {/* <section className="py-20 bg-gradient-to-b from-[#1a1a3a]/50 to-[#0a0a1a]">
+        {/* Features Section */}
+        {/* <section className="py-20 bg-gradient-to-b from-[#1a1a3a]/50 to-[#0a0a1a]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Powerful Features for <span className="text-[#8a5cf6]">Modern Churches</span>
+                  Powerful Features for{" "}
+                  <span className="text-[#8a5cf6]">Modern Churches</span>
                 </h2>
                 <p className="text-gray-300 mb-8">
-                  Our comprehensive church management platform provides everything you need to streamline operations and
-                  focus on what matters most - your ministry and community.
+                  Our comprehensive church management platform provides
+                  everything you need to streamline operations and focus on what
+                  matters most - your ministry and community.
                 </p>
                 <ul className="space-y-4">
                   {[
@@ -218,8 +214,18 @@ export default function Home() {
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#8a5cf6]/20 flex items-center justify-center mt-0.5">
-                        <svg className="h-4 w-4 text-[#8a5cf6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <svg
+                          className="h-4 w-4 text-[#8a5cf6]"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
                         </svg>
                       </div>
                       <span className="ml-3 text-gray-300">{feature}</span>
@@ -243,10 +249,12 @@ export default function Home() {
           </div>
         </section> */}
 
-          {/* Testimonials */}
-          {/* <section className="py-20">
+        {/* Testimonials */}
+        {/* <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">What Church Leaders Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+              What Church Leaders Say
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
@@ -287,7 +295,9 @@ export default function Home() {
                   <p className="text-gray-300 mb-6">"{testimonial.quote}"</p>
                   <div>
                     <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-gray-400 text-sm">{testimonial.church}</p>
+                    <p className="text-gray-400 text-sm">
+                      {testimonial.church}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -295,128 +305,233 @@ export default function Home() {
           </div>
         </section> */}
 
-          {/* Get started with Infrasity Section */}
-          <div className="bg-gradient-to-b from-black/50 to-[#2e0069] rounded-xl px-9 py-16 text-center max-w-7xl mx-auto my-10 relative overflow-hidden cursor-pointer">
-            {/* Logo */}
-            <div className="flex justify-center mb-6">
-              <img src="/logo.svg" alt="Infrasity Logo" className="h-12 w-12" />
-            </div>
+        {/* Our latest work */}
+        {/* FIXME: Add transition border and ask for pagination */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <span className="mb-12 flex justify-around">
+              <h1 className="text-4xl md:text-4xl font-bold "> Our Latest work</h1>
+              <button className="rounded-2xl border-1 p-2.5 text-xl font-bold ml-96"> View more of your work → </button>
+            </span>
+            <div className="grid md:grid-cols-3 gap-6">
+  {[
+    {
+      title: "Diversifi",
+      description: "Artificial Intelligence.",
+      area: "Branding",
+      href: "https://www.joinamply.com/work",
+      image: ""
+    },
+    {
+      title: "Dell",
+      description: "Venture Capital",
+      area: "Webflow Dev",
+      href: "https://www.joinamply.com/work",
+      image: ""
 
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Get started with Infrasity
-            </h2>
-
-            {/* Subheading */}
-            <p className="text-gray-300 max-w-xl mx-auto mb-8">
-              Infrasity is the only platform which provides you with developer
-              focused content for your products or services
-            </p>
-
-            {/* Buttons */}
-            <div className="flex justify-center gap-4">
-              <button className="bg-white text-black font-semibold py-2 px-4 rounded-md hover:bg-gray-100">
-                <a href="https://content.infrasity.com/"> Outline Generator  </a>
-              </button>
-              <button className="bg-black text-white font-semibold py-2 px-4 rounded-md hover:bg-gray-800">
-                <a href="https://www.infrasity.com/contact"> Talk to Us </a>
-              </button>
-            </div>
-
-            {/* Optional subtle grid background effect */}
-            <div className="absolute inset-0 bg-[radial-gradient(#ffffff0c_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none rounded-xl" />
+    },
+    {
+      title: "WhisperRoom",
+      description: "Sound Isolation Enclosures.",
+      area: "Web Design",
+      href: "https://www.joinamply.com/work",      
+      image: ""
+    },
+  ].map((item, index) => (
+    <div
+      key={index}
+      className="bg-[#1a1a3a] p-6 rounded-lg border border-gray-800 w-full h-full hover:shadow-lg hover:scale-[1.01] transition-all"
+    >
+      <div className="flex flex-col justify-between h-full">
+        <div>
+          <img    
+          alt={`Church Partner`}
+          width={120}
+          height={40}
+          className="h-100 w-100 object-contain border-0 rounded-2xl shadow-2xl"
+          ></img>
+          <div className="mt-5 text-3xl">
+          <h2 className="text-xl font-semibold text-white">{item.title}</h2>
+          <button className="text-xs rounded-lg border-1 border-[#aa39ff] transition p-1 text-purple-400">{item.area}</button>
           </div>
 
-          {/* Footer ✅ */}
-          <footer className="bg-[#0a0a1a] border-t border-gray-800 py-12 ml-64">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 ">
-                <div className="col-span-2 md:col-span-1">
-                  <a
-                    href="https://www.infrasity.com/"
-                    className="flex items-center space-x-2 mb-6"
-                  >
-                    <span className="text-[#8a5cf6] font-bold text-xl">
-                      INFRASITE
-                    </span>
-                  </a>
-                  <p className="text-gray-400 mb-6">
-                    Amplifying product visibility through technical content and
-                    SEO that drives awareness and boosts search rankings.
-                  </p>
-                </div>
-                <div className="ml-20">
-                  <h3 className="font-semibold text-lg mb-4 ">Services</h3>
-                  <ul className="space-y-2">
-                    <li className="text-gray-400 hover:text-white">
-                      <a href=""> Technical Writing Service</a>
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href=""> Video Production</a>
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href=""> Updates </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="ml-14">
-                  <h3 className="font-semibold text-lg mb-4">Resources</h3>
-                  <ul className="space-y-2">
-                    <li className="text-gray-400 hover:text-white">
-                      <a href=""> Home </a>
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href=""> Blog </a>
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href=""> Case </a> Studies
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href=""> FAQ </a>
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href=""> Contact </a> us
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-4">Follow us</h3>
-                  <ul className="space-y-2 ">
-                    <li className="text-gray-400 hover:text-white">
-                      <a href="">Youtube</a>
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href="">X</a>
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href="">Linkedln</a>
-                    </li>
-                    <li className="text-gray-400 hover:text-white">
-                      <a href="">Instagram</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="pt-8 border-t border-gray-800 text-center text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4 px-4 md:px-12 mt-10">
-                <p className="text-sm mr-3">
-                  © {new Date().getFullYear()} Infrasite. All rights reserved.
-                </p>
-                <p className="text-sm mr-30">
-                  <a className="hover:underline">
-                    Privacy Policy Terms of Service
-                  </a>
-                </p>
+          <div className="mt-5 flex justify-around items-center gap-24">
+          <p className="text-md text-gray-400">{item.description}</p>
+          <a
+            href={item.href}
+            className="text-xl text-blue-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View →
+          </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  ))}
+</div>
+        </div>
+        </section>
+
+
+
+        {/* Lets work together Section */}
+        {/**FIXME: add blue gradient */}
+        <div className="relative text-center py-20 px-6 overflow-hidden ">
+          {/* Background Dot Grid */}
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:30px_30px] opacity-40 pointer-events-none z-0" />
+
+          {/* Center Content */}
+          <div className="relative z-10">
+            {/* Icon */}
+            <div className="flex justify-center mb-6">
+              <div className="bg-[#1f0b2e] p-4 rounded-xl shadow-xl">
+                <img src="/logo.svg" alt="Logo" className="w-6 h-6" />
               </div>
             </div>
-          </footer>
+
+            {/* Title */}
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-200">
+              Let’s <span className="text-white">work together!</span>
+            </h2>
+
+            {/* Subtitle */}
+            <p className="text-lg md:text-xl text-gray-400 mt-4 max-w-2xl mx-auto">
+              Schedule a call with us to start your brand’s trip to the stars...
+              or maybe just to talk shop.
+            </p>
+
+            {/* CTA Card */}
+            <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6 border-1 rounded-xl px-6 py-4 max-w-xl mx-auto shadow-lg">
+              {/* Avatar Section */}
+              <div className="flex items-center gap-3">
+                <img
+                  src="/avatars.png"
+                  alt="Founders"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div className="text-left">
+                  <p className="text-sm text-white font-semibold">
+                    Book a call with
+                  </p>
+                  <p className="text-sm text-gray-400">Amply founders</p>
+                </div>
+              </div>
+
+              {/* Button */}
+              <button className="bg-white text-black font-semibold px-5 py-2 rounded-lg border-2 border-[#aa39ff] hover:bg-gray-100 transition">
+                Book a Call
+              </button>
+            </div>
+          </div>
         </div>
+
+        {/* Footer */}
+        {/* FIXME: add link to each  */}
+        <footer className="bg-gradient-to-tr from-[#0a0a1a] via-blue-950 to-[#0a0a1a] py-12 pb-80">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="col-span-2 md:col-span-1">
+                <a href="/" className="flex items-center space-x-2 mb-6">
+                  <span className="text-[#8a5cf6] font-bold text-xl ml-14">
+                    SHEPHERDLY
+                  </span>
+                </a>
+                <p className="text-gray-400 mb-6 ml-14">
+                  Empowering churches with intuitive management tools for growth
+                  and engagement.
+                </p>
+                <div className="flex space-x-4 ml-14">
+                  {["facebook", "instagram", "linkedin"].map((social) => (
+                    <a
+                      key={social}
+                      href={`#${social}`}
+                      className="text-gray-400 hover:text-[#8a5cf6]"
+                    >
+                      <span className="sr-only">{social}</span>
+                      <div className="h-6 w-6 rounded-full bg-gray-800 flex items-center justify-center">
+                        <svg
+                          className="h-4 w-4"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+                        </svg>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <div className="ml-14">
+                <h3 className="font-semibold text-lg mb-4">Services</h3>
+                <ul className="space-y-2">
+                  {[
+                    "Webflow Agency",
+                    "Webflow Development",
+                    "Web Design",
+                    "Branding",
+                    "CRO",
+                    "Maintenace",
+                    "Technical SEO",
+                    "Integrations",
+                    "Migrations",
+                    "Work",
+                  ].map((item) => (
+                    <li key={item}>
+                      <a
+                        href={`#${item.toLowerCase()}`}
+                        className="text-gray-400 hover:text-white"
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="ml-14">
+                <h3 className="font-semibold text-lg mb-4">Resources</h3>
+                <ul className="space-y-2">
+                  {[
+                    "Blog",
+                    "About",
+                    "Partenrs",
+                    "Why Amply",
+                    "Comparisons",
+                    "Book a Call",
+                  ].map((item) => (
+                    <li key={item}>
+                      <a
+                        href={`#${item.toLowerCase()}`}
+                        className="text-gray-400 hover:text-white"
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="ml-14">
+                <h3 className="font-semibold text-lg mb-4">Company</h3>
+                <ul className="space-y-2">
+                  {["About", "Blog", "Careers", "Contact"].map((item) => (
+                    <li key={item}>
+                      <a
+                        href={`#${item.toLowerCase()}`}
+                        className="text-gray-400 hover:text-white"
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
 }
-
-/**
- * I’ll work on this this way: I will create a page with Infrasity’s website theme that shows the team's past and latest projects. I can use    Shepherdly for design. For this, I’ll use React.js and ts and some libraries like tailwind, mui, etc. 
-okokokokoko
- * I’ve to deploy it separately.
- */
