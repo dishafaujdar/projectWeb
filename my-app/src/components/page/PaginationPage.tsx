@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import BH from "../../assets/photoes/BrightHive.png"
 import CC from "../../assets/photoes/CodeCrush.png"
 import EF from "../../assets/photoes/EchoFlow.png"
