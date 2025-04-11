@@ -146,7 +146,6 @@ const allCards = [
   },
 ];
 
-
 const ITEMS_PER_LOAD = 4;
 
 const PaginationPage = () => {
@@ -186,78 +185,77 @@ const PaginationPage = () => {
   }, [visibleCards]);
   
   return (
-    <div className="bg-[#0a0a1a] bg-gradient-to-br from-[#0a0a1a] to-[#1a1a3a] min-h-screen py-20 px-6 relative">
-      <h1 className="text-4xl font-bold mb-10 text-center bg-clip-text text-transparent text-white">
+    <div className="bg-[#0a0a1a] bg-gradient-to-br from-[#0a0a1a] to-[#1a1a3a] min-h-screen py-10 sm:py-16 lg:py-20 px-4 sm:px-6 relative">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-10 text-center text-white">
         More of Our Work
       </h1>
       
-      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {allCards.slice(0, visibleCards).map((item, index) => (
           <div
             key={index}
-            className="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-5 rounded-xl border border-gray-700 
+            className="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-3 sm:p-5 rounded-xl border border-gray-700 
             hover:shadow-lg hover:shadow-blue-500/10 hover:border-blue-500/30 hover:scale-105 transition-all duration-300"
           >
-            <div className="overflow-hidden rounded-lg mb-4 relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent z-10 " />
+            <div className="overflow-hidden rounded-lg mb-3 sm:mb-4 relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent z-10" />
               <img
                 src={item.image || "/assets/photos/fallback.png"}
                 alt={`Image for ${item.title}`}
-                className="h-90 w-full object-cover transform hover:scale-110 transition-transform duration-500 "
+                className="h-48 sm:h-64 w-full object-cover transform hover:scale-110 transition-transform duration-500"
               />
             </div>
             
-            <div className="mt-3 text-white">
-              <h2 className="text-xl text-white font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-indigo-300">
+            <div className="mt-2 sm:mt-3 text-white">
+              <h2 className="text-base sm:text-xl text-white font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-indigo-300">
                 {item.title}
               </h2>
               
-              <div className="flex flex-wrap gap-2 mt-3">
+              <div className="flex flex-wrap gap-1 sm:gap-2 mt-2 sm:mt-3">
                 {item.areas.map((area, i) => (
                   <span 
                     key={i} 
-                    className="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-purple-900/40 to-indigo-900/40 border border-purple-500/20 text-purple-200"
+                    className="text-xs px-2 sm:px-3 py-1 rounded-full bg-gradient-to-r from-purple-900/40 to-indigo-900/40 border border-purple-500/20 text-purple-200"
                   >
                     {area}
                   </span>
                 ))}
               </div>
 
-              <div className="border-t border-gray-700 my-4"></div>
+              <div className="border-t border-gray-700 my-3 sm:my-4"></div>
               
-              <div className="mt-5 flex justify-around items-center gap-16">
-              <p className="text-gray-300 mt-2 text-sm ">{item.description}</p>
-              <a
-                href={item.href}
-                className="text-xl text-blue-400 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div className="mt-3 sm:mt-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4">
+                <p className="text-gray-300 text-xs sm:text-sm">{item.description}</p>
+                <a
+                  href={item.href}
+                  className="text-sm sm:text-base lg:text-xl text-blue-400 hover:underline mt-2 sm:mt-0"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                View Project →
-              </a>
-                </div>
+                  View →
+                </a>
+              </div>
             </div>
           </div>
         ))}
       </div>
       
-      {/* Enhanced bottom gradient */}  
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-gray-900 via-blue-950/90 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-36 sm:h-48 bg-gradient-to-t from-gray-900 via-blue-950/90 to-transparent pointer-events-none" />
       
       {visibleCards < allCards.length && (
-        <div ref={loader} className="mt-12 mb-6 flex justify-center items-center">
+        <div ref={loader} className="mt-8 sm:mt-12 mb-6 flex justify-center items-center">
           {isLoading ? (
             <div className="flex flex-col items-center">
-              <div className="relative w-12 h-12">
+              <div className="relative w-8 h-8 sm:w-12 sm:h-12">
                 <div className="absolute top-0 left-0 w-full h-full border-4 border-blue-200 opacity-20 rounded-full animate-ping"></div>
                 <div className="absolute top-0 left-0 w-full h-full border-4 border-t-blue-500 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
               </div>
-              <span className="mt-3 text-purple-300 text-sm font-medium">Loading more...</span>
+              <span className="mt-2 sm:mt-3 text-purple-300 text-xs sm:text-sm font-medium">Loading more...</span>
             </div>
           ) : (
             <button 
               onClick={loadMore} 
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-md text-white font-medium shadow-lg shadow-purple-500/20 transition-all hover:shadow-purple-500/40"
+              className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-md text-white text-sm sm:text-base font-medium shadow-lg shadow-purple-500/20 transition-all hover:shadow-purple-500/40"
             >
               Load More
             </button>
@@ -266,8 +264,8 @@ const PaginationPage = () => {
       )}
       
       {visibleCards >= allCards.length && (
-        <div className="mt-12 mb-6 text-center">
-          <span className="inline-block px-6 py-3 bg-gradient-to-r from-purple-900/30 to-indigo-900/30 rounded-md text-purple-200 border border-purple-500/20">
+        <div className="mt-8 sm:mt-12 mb-6 text-center">
+          <span className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-purple-900/30 to-indigo-900/30 rounded-md text-purple-200 text-sm sm:text-base border border-purple-500/20">
             ✨ You've seen all our work
           </span>
         </div>

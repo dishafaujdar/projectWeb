@@ -10,7 +10,7 @@ import wr from "../../assets/photoes/room.png";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a1a] bg-gradient-to-br from-[#0a0a1a] to-[#1a1a3a] text-white overflow-hidden relative">
-      {/* Stars background */}
+      
       <div className="absolute inset-0 z-0">
         {Array.from({ length: 800 }).map((_, i) => (
           <div
@@ -27,15 +27,11 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0a1a] z-0"></div>
 
-      {/* Content */}
       <div className="relative z-10">
-        {/* Navigation */}
         <div className="bg-gradient-to-r from-[#0a0a1a] via-blue-950 to-[#0a0a1a] p-1 text-center text-white font-medium">
-          {" "}
-          New: Why B2B brands are switching from WordPress to Webflow 🔥{" "}
+          New: Why B2B brands are switching from WordPress to Webflow 🔥
         </div>
         <header className="border-b border-gray-800 bg-[#0a0a1a]/80 backdrop-blur-md sticky top-0 z-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,83 +90,92 @@ export default function Home() {
                   About Us
                 </a>
               </nav>
-              <div>
+              <div className="hidden sm:block">
                 <a
                   href="/demo"
-                  className=" text-white px-4 py-2 rounded-xl transition-colors duration-200 border-1 text-xl hover:bg-white hover:text-black"
+                  className="text-white px-4 py-2 rounded-xl transition-colors duration-200 border border-white text-sm sm:text-base lg:text-xl hover:bg-white hover:text-black"
                 >
                   Book call →
                 </a>
+              </div>
+              {/* Mobile menu button */}
+              <div className="md:hidden flex items-center">
+                <button className="text-gray-300 hover:text-white focus:outline-none">
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
         </header>
 
-        {/* Hero Section */}
-        <section className="py-20 md:py-32 relative grid grid-cols-1 lg:grid-cols-2 px-4 sm:px-6 lg:px-16 gap-24 lg:gap-40 items-center ml-40 ">
-          {/* Left Side - Visual Mockup Container */}
-          <div className="relative flex justify-center">
-            <div className=" w-full max-w-md h-[760px] rounded-3xl shadow-2xl border border-[#1f1f2e] p-4 flex items-center justify-center ">
+        <section className="py-12 md:py-20 lg:py-32 relative grid grid-cols-1 lg:grid-cols-2 px-4 sm:px-6 lg:px-8 gap-8 lg:gap-16 items-center">
+          <div className="relative flex justify-center order-2 lg:order-1">
+            <div className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto sm:h-[500px] md:h-[600px] lg:h-[760px] rounded-3xl shadow-2xl border border-[#1f1f2e] p-2 sm:p-4 flex items-center justify-center">
               <img
                 src={infrasity}
                 alt="infrasity image"
-                height={700}
-                width={900}
-                className="rounded-3xl"
-              ></img>
+                className="rounded-3xl object-cover h-full w-full"
+              />
             </div>
           </div>
 
-          {/* Right Side - Content Section */}
-          <div className="mt-10 lg:mt-0 text-left">
-            <h1 className="text-5xl font-bold text-white mb-4">Infrasity</h1>
+          <div className="mt-6 lg:mt-0 text-left order-1 lg:order-2">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Infrasity</h1>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
               {["Branding", "Web Design", "Webflow Dev"].map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full py-2 px-4 border border-[#7e5eca] text-white text-sm"
+                  className="rounded-full py-1 sm:py-2 px-3 sm:px-4 border border-[#7e5eca] text-white text-xs sm:text-sm"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            {/* Info Blocks */}
-            <div className="space-y-6 text-white">
+            <div className="space-y-4 sm:space-y-6 text-white">
               <div>
-                <span className="text-sm text-gray-400">Field</span>
+                <span className="text-xs sm:text-sm text-gray-400">Field</span>
                 <p className="font-bold">SaaS</p>
               </div>
               <div>
-                <span className="text-sm text-gray-400">Company Location</span>
+                <span className="text-xs sm:text-sm text-gray-400">Company Location</span>
                 <p className="font-bold">Boston, Massachusetts</p>
               </div>
               <div>
-                <span className="text-sm text-gray-400">About</span>
+                <span className="text-xs sm:text-sm text-gray-400">About</span>
                 <p className="font-bold leading-relaxed max-w-md">
-                  Shepherdly’s Risk Score uses a predictive model that learns
+                  Shepherdly's Risk Score uses a predictive model that learns
                   from patterns and outcomes in your codebase history.
                 </p>
               </div>
             </div>
 
-            {/* Button */}
-            <div className="mt-10">
-              <button className="rounded-2xl border border-[#525ce6] text-white py-4 px-8 font-semibold hover:bg-[#1b1b2f] transition-all duration-300">
+            <div className="mt-8 sm:mt-10">
+              <button className="rounded-2xl border border-[#525ce6] text-white py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 font-semibold hover:bg-[#1b1b2f] transition-all duration-300">
                 Visit Website ↗
               </button>
             </div>
           </div>
         </section>
 
-        {/**The challenge */}
-        <section className="py-20 bg-[#0a0a1a]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 m-40 ">
-            <div className="flex gap-50 ">
-              <span className="text-5xl font-bold ">The challenge</span>
-              <span className="text-xl">
+        <section className="py-12 sm:py-16 lg:py-20 bg-[#0a0a1a]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12">
+              <span className="text-3xl md:text-4xl lg:text-5xl font-bold md:w-1/3">The challenge</span>
+              <span className="text-lg md:text-xl md:w-2/3">
                 As an early-stage startup, Shepardly faced challenges with their
                 current website, which failed to effectively convey their
                 product story or establish legitimacy due to its inadequate
@@ -178,63 +183,58 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="mt-20 mb-20">
+            <div className="mt-10 sm:mt-16 lg:mt-20 mb-10 sm:mb-16 lg:mb-20">
               <img
                 src={photoes1}
                 alt="image from amply"
-                width={5000}
-                height={700}
-              ></img>
+                className="w-full h-auto rounded-lg"
+              />
             </div>
 
-            <div className="mt-30">
-              <div className="flex gap-50">
-                <span className="text-5xl font-bold ">The solution</span>
-                <span className="text-xl">
+            <div className="mt-16 sm:mt-24 lg:mt-30">
+              <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12">
+                <span className="text-3xl md:text-4xl lg:text-5xl font-bold md:w-1/3">The solution</span>
+                <span className="text-lg md:text-xl md:w-2/3">
                   Amply addressed these issues by redesigning Shepardly's
                   website to more accurately and compellingly tell their product
                   story. We focused on elevating the design quality to reflect a
                   professional and credible image that could build trust with
                   visitors. This involved enhancing visual elements, improving
                   content structure, and ensuring the website's overall
-                  aesthetics aligned with Shepardly’s brand and vision. By doing
+                  aesthetics aligned with Shepardly's brand and vision. By doing
                   so, we helped Shepardly project the legitimacy and innovative
                   spirit needed to engage their target audience effectively.
                 </span>
               </div>
 
-              <div className="mt-20 mb-20">
-                <div className=" bg-white border rounded-2xl w-[1460px] h-[200px] mb-10 text-black text-9xl">
-                  <p className="ml-50 mt-10">''</p>
+              <div className="mt-10 sm:mt-16 lg:mt-20 mb-10 sm:mb-16 lg:mb-20">
+                <div className="bg-white border rounded-2xl w-full h-auto sm:h-[150px] lg:h-[200px] mb-6 sm:mb-10 text-black">
+                  <p className="text-5xl sm:text-7xl lg:text-9xl px-6 sm:px-10 pt-4 sm:pt-6">''</p>
                 </div>
                 <img
                   src={photoes2}
                   alt="image2 from amply"
-                  width={5000}
-                  height={700}
-                ></img>
+                  className="w-full h-auto rounded-lg"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Our latest work */}
-        {/* FIXME: Add transition border and ask for pagination */}
-        <section className="py-20 bg-[#0a0a1a] ">
+        <section className="py-12 sm:py-16 lg:py-20 bg-[#0a0a1a]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-5 flex ml-20 sm:px-6 lg:gap-99 md:px-2">
-              <h1 className="text-4xl md:text-3xl font-bold ">
+            <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <h1 className="text-3xl sm:text-4xl font-bold">
                 Our latest work
               </h1>
-              <button className="rounded-2xl border-1 p-2.5 text-2xl font-bold ml-96 border-[#7e5eca]">
-                <Link to="/pagination" className="">
-                  {" "}
-                  View more of your work →{" "}
+              <button className="rounded-2xl border border-[#7e5eca] p-2 text-base sm:text-lg lg:text-2xl font-bold">
+                <Link to="/pagination">
+                  View more of your work →
                 </Link>
               </button>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   title: "Diversifi",
@@ -260,37 +260,37 @@ export default function Home() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-[#1a1a3a] p-6 rounded-lg border border-gray-800 w-full h-full hover:shadow-lg hover:scale-[1.01] transition-all"
+                  className="bg-[#1a1a3a] p-4 sm:p-6 rounded-lg border border-gray-800 w-full h-full hover:shadow-lg hover:scale-[1.01] transition-all"
                 >
-                  <div className="flex flex-col justify-between h-full relative sparkle-border rounded-xl p-6">
+                  <div className="flex flex-col justify-between h-full relative sparkle-border rounded-xl p-3 sm:p-6">
                     <div>
                       <img
                         src={item.image}
                         alt={`Image for ${item.title}`}
-                        className="h-120 w-full object-contain border-0 rounded-2xl shadow-2xl"
+                        className="h-auto w-full object-contain border-0 rounded-2xl shadow-2xl"
                       />
-                      <div className="mt-5 text-xl">
-                        <h2 className="text-xl font-semibold text-white">
+                      <div className="mt-4 text-base sm:text-xl">
+                        <h2 className="text-lg sm:text-xl font-semibold text-white">
                           {item.title}
                         </h2>
                         <div className="flex gap-2 flex-wrap mt-2">
                           {item.areas.map((tag) => (
-                            <span className="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-purple-900/40 to-indigo-900/40 border border-purple-500/20 text-purple-200">
+                            <span className="text-xs px-2 sm:px-3 py-1 rounded-full bg-gradient-to-r from-purple-900/40 to-indigo-900/40 border border-purple-500/20 text-purple-200">
                               {tag}
                             </span>
                           ))}
                         </div>
                       </div>
 
-                      <div className="border-t border-gray-700 my-4"></div>
+                      <div className="border-t border-gray-700 my-3 sm:my-4"></div>
 
-                      <div className="mt-5 flex justify-around items-center gap-24 ">
-                        <p className="text-md text-gray-400 font-semibold">
+                      <div className="mt-3 sm:mt-5 flex justify-between items-center">
+                        <p className="text-sm sm:text-md text-gray-400 font-semibold">
                           {item.description}
                         </p>
                         <a
                           href={item.href}
-                          className="text-xl text-blue-400 hover:underline"
+                          className="text-base sm:text-xl text-blue-400 hover:underline"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -305,75 +305,70 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Lets work together Section */}
-        {/**FIXME: add blue gradient */}
-        <div className="relative text-center py-20 px-6 overflow-hidden">
-          {/* Background Dot Grid */}
+        <div className="relative text-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:30px_30px] opacity-40 z-0" />
 
-          {/* Blue Gradient in the Center */}
           <div className="absolute inset-0 bg-gradient-radial from-blue-600/20 via-indigo-900/10 to-transparent z-0" />
 
-          {/* Center Content */}
+          
           <div className="relative z-10">
-            {/* Icon */}
-            <div className="flex justify-center mb-6">
-              <div className="bg-[#1f0b2e] p-4 rounded-xl shadow-xl">
-                <img src="/logo.svg" alt="Logo" className="w-6 h-6" />
+          
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <div className="bg-[#1f0b2e] p-3 sm:p-4 rounded-xl shadow-xl">
+                <img src="/logo.svg" alt="Logo" className="w-4 h-4 sm:w-6 sm:h-6" />
               </div>
             </div>
 
-            {/* Title */}
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-200">
+        
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200">
               Let's <span className="text-white">work together!</span>
             </h2>
 
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-400 mt-4 max-w-2xl mx-auto">
+        
+            <p className="text-base sm:text-lg lg:text-xl text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto">
               Schedule a call with us to start your brand's trip to the stars...
               or maybe just to talk shop.
             </p>
 
-            {/* CTA Card */}
-            <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6 border-1 rounded-xl px-6 py-4 max-w-xl mx-auto shadow-lg">
-              {/* Avatar Section */}
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 border rounded-xl px-4 sm:px-6 py-3 sm:py-4 max-w-xl mx-auto shadow-lg">
+              
               <div className="flex items-center gap-3">
                 <img
                   src="/avatars.png"
                   alt="Founders"
-                  className="w-10 h-10 rounded-full"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
                 />
                 <div className="text-left">
-                  <p className="text-sm text-white font-semibold">
+                  <p className="text-xs sm:text-sm text-white font-semibold">
                     Book a call with
                   </p>
-                  <p className="text-sm text-gray-400">Amply founders</p>
+                  <p className="text-xs sm:text-sm text-gray-400">Amply founders</p>
                 </div>
               </div>
 
-              {/* Button */}
-              <button className="bg-white text-black font-semibold px-5 py-2 rounded-lg border-2 border-[#aa39ff] hover:bg-gray-100 transition">
+              
+              <button className="bg-white text-black font-semibold px-4 sm:px-5 py-2 rounded-lg border-2 border-[#aa39ff] hover:bg-gray-100 transition w-full sm:w-auto mt-3 sm:mt-0">
                 Book a Call
               </button>
             </div>
           </div>
         </div>
 
-        {/* Footer */}
-        <footer className="bg-gradient-to-tr from-[#0a0a1a] via-blue-950 to-[#0a0a1a] py-12 pb-80">
+        
+        <footer className="bg-gradient-to-tr from-[#0a0a1a] via-blue-950 to-[#0a0a1a] py-12 pb-20 sm:pb-40 lg:pb-80">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="col-span-2 md:col-span-1">
-                <a href="/" className="flex items-center space-x-2 mb-6">
-                  <span className="text-[#8a5cf6] font-bold text-xl ml-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+                <a href="/" className="flex items-center space-x-2 mb-4 sm:mb-6">
+                  <span className="text-[#8a5cf6] font-bold text-xl">
                     SHEPHERDLY
                   </span>
                 </a>
-                <p className="text-gray-400 mb-6 ml-14">
+                <p className="text-gray-400 mb-4 sm:mb-6">
                   Empowering churches with intuitive management tools for growth
                   and engagement.
                 </p>
-                <div className="flex space-x-4 ml-14">
+                <div className="flex space-x-4">
                   {["facebook", "instagram", "linkedin"].map((social) => (
                     <a
                       key={social}
@@ -394,9 +389,9 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div className="ml-14">
-                <h3 className="font-semibold text-lg mb-4">Services</h3>
-                <ul className="space-y-2">
+              <div>
+                <h3 className="font-semibold text-lg mb-3 sm:mb-4">Services</h3>
+                <ul className="space-y-1 sm:space-y-2">
                   {[
                     "Webflow Agency",
                     "Webflow Development",
@@ -412,7 +407,7 @@ export default function Home() {
                     <li key={item}>
                       <a
                         href={`#${item.toLowerCase()}`}
-                        className="text-gray-400 hover:text-white"
+                        className="text-gray-400 hover:text-white text-sm"
                       >
                         {item}
                       </a>
@@ -420,9 +415,9 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
-              <div className="ml-14">
-                <h3 className="font-semibold text-lg mb-4">Resources</h3>
-                <ul className="space-y-2">
+              <div>
+                <h3 className="font-semibold text-lg mb-3 sm:mb-4">Resources</h3>
+                <ul className="space-y-1 sm:space-y-2">
                   {[
                     "Blog",
                     "About",
@@ -434,7 +429,7 @@ export default function Home() {
                     <li key={item}>
                       <a
                         href={`#${item.toLowerCase()}`}
-                        className="text-gray-400 hover:text-white"
+                        className="text-gray-400 hover:text-white text-sm"
                       >
                         {item}
                       </a>
@@ -442,14 +437,14 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
-              <div className="ml-14">
-                <h3 className="font-semibold text-lg mb-4">Company</h3>
-                <ul className="space-y-2">
+              <div>
+                <h3 className="font-semibold text-lg mb-3 sm:mb-4">Company</h3>
+                <ul className="space-y-1 sm:space-y-2">
                   {["About", "Blog", "Careers", "Contact"].map((item) => (
                     <li key={item}>
                       <a
                         href={`#${item.toLowerCase()}`}
-                        className="text-gray-400 hover:text-white"
+                        className="text-gray-400 hover:text-white text-sm"
                       >
                         {item}
                       </a>
