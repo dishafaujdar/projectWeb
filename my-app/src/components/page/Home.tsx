@@ -360,7 +360,6 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        {/* FIXME: add link to each , add amply at the end */}
         <footer className="bg-gradient-to-tr from-[#0a0a1a] via-blue-950 to-[#0a0a1a] py-12 pb-80">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
