@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, User, UserPlus, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 import photoes1 from "../../assets/photoes/image.png";
 import photoes2 from "../../assets/photoes/image2.png";
@@ -44,62 +44,80 @@ export default function Home() {
                 </a>
               </div>
               <nav className="hidden md:flex space-x-8">
-                <a href="/" className="text-gray-300 hover:text-white">
+                <a href="/" className="text-gray-300 hover:text-white transition-colors">
                   Home
                 </a>
-                <a href="/blog" className="text-gray-300 hover:text-white">
+                <a href="/blog" className="text-gray-300 hover:text-white transition-colors">
                   Blog
                 </a>
                 <a
                   href="/case-studies"
-                  className="text-gray-300 hover:text-white"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
                   Case Studies
                 </a>
                 <div className="relative group">
-                  <button className="flex items-center text-gray-300 hover:text-white">
+                  <button className="flex items-center text-gray-300 hover:text-white transition-colors">
                     Services <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                   <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-[#1a1a3a] ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="py-1">
                       <a
                         href="/services/member-management"
-                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a]"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a] transition-colors"
                       >
                         Member Management
                       </a>
                       <a
                         href="/services/event-planning"
-                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a]"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a] transition-colors"
                       >
                         Event Planning
                       </a>
                       <a
                         href="/services/giving"
-                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a]"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-[#2a2a4a] transition-colors"
                       >
                         Giving & Donations
                       </a>
                     </div>
                   </div>
                 </div>
-                <a href="/faq" className="text-gray-300 hover:text-white">
+                <a href="/faq" className="text-gray-300 hover:text-white transition-colors">
                   FAQ
                 </a>
-                <a href="/about-us" className="text-gray-300 hover:text-white">
+                <a href="/about-us" className="text-gray-300 hover:text-white transition-colors">
                   About Us
                 </a>
               </nav>
-              <div className="hidden sm:block">
-                <a
-                  href="/demo"
-                  className="text-white px-4 py-2 rounded-xl transition-colors duration-200 border border-white text-sm sm:text-base lg:text-xl hover:bg-white hover:text-black"
+              
+              {/* Authentication Buttons */}
+              <div className="hidden lg:flex items-center space-x-4">
+                <Link
+                  to="/signin"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white px-3 py-2 rounded-lg transition-colors hover:bg-[#1a1a3a]"
                 >
-                  Book call →
-                </a>
+                  <User className="h-4 w-4" />
+                  <span>Sign In</span>
+                </Link>
+                <Link
+                  to="/signup"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-[#8a5cf6] to-[#525ce6] text-white px-4 py-2 rounded-lg font-medium hover:from-[#7c52f4] hover:to-[#4a52d9] transition-all duration-200 shadow-lg hover:shadow-purple-500/25"
+                >
+                  <UserPlus className="h-4 w-4" />
+                  <span>Sign Up</span>
+                </Link>
+                <Link
+                  to="/guest-dashboard"
+                  className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 px-3 py-2 rounded-lg border border-cyan-400/30 hover:border-cyan-300/50 transition-all duration-200 hover:bg-cyan-400/10"
+                >
+                  <Eye className="h-4 w-4" />
+                  <span>Try as Guest</span>
+                </Link>
               </div>
+
               {/* Mobile menu button */}
-              <div className="md:hidden flex items-center">
+              <div className="lg:hidden flex items-center">
                 <button className="text-gray-300 hover:text-white focus:outline-none">
                   <svg
                     className="h-6 w-6"
@@ -117,9 +135,37 @@ export default function Home() {
                 </button>
               </div>
             </div>
+
+            {/* Mobile Authentication Menu */}
+            <div className="lg:hidden border-t border-gray-800 py-4">
+              <div className="flex flex-col space-y-3">
+                <Link
+                  to="/signin"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white px-3 py-2 rounded-lg transition-colors hover:bg-[#1a1a3a]"
+                >
+                  <User className="h-4 w-4" />
+                  <span>Sign In</span>
+                </Link>
+                <Link
+                  to="/signup"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-[#8a5cf6] to-[#525ce6] text-white px-4 py-2 rounded-lg font-medium hover:from-[#7c52f4] hover:to-[#4a52d9] transition-all duration-200 shadow-lg hover:shadow-purple-500/25"
+                >
+                  <UserPlus className="h-4 w-4" />
+                  <span>Sign Up</span>
+                </Link>
+                <Link
+                  to="/guest-dashboard"
+                  className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 px-3 py-2 rounded-lg border border-cyan-400/30 hover:border-cyan-300/50 transition-all duration-200 hover:bg-cyan-400/10"
+                >
+                  <Eye className="h-4 w-4" />
+                  <span>Try as Guest</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </header>
 
+        {/* Hero Section with Enhanced CTA */}
         <section className="py-12 md:py-20 lg:py-32 relative grid grid-cols-1 lg:grid-cols-2 px-4 sm:px-6 lg:px-8 gap-8 lg:gap-16 items-center">
           <div className="relative flex justify-center order-2 lg:order-1">
             <div className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto sm:h-[500px] md:h-[600px] lg:h-[760px] rounded-3xl shadow-2xl border border-[#1f1f2e] p-2 sm:p-4 flex items-center justify-center">
@@ -163,14 +209,36 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 sm:mt-10">
-              <button className="rounded-2xl border border-[#525ce6] text-white py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 font-semibold hover:bg-[#1b1b2f] transition-all duration-300">
-                Visit Website ↗
-              </button>
+            {/* Enhanced CTA Section */}
+            <div className="mt-8 sm:mt-10 space-y-4">
+              <div className="flex flex-wrap gap-3">
+                <button className="rounded-2xl border border-[#525ce6] text-white py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 font-semibold hover:bg-[#1b1b2f] transition-all duration-300">
+                  Visit Website ↗
+                </button>
+                <Link
+                  to="/signup"
+                  className="rounded-2xl bg-gradient-to-r from-[#8a5cf6] to-[#525ce6] text-white py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 font-semibold hover:from-[#7c52f4] hover:to-[#4a52d9] transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+                >
+                  Get Started Free
+                </Link>
+              </div>
+              
+              <div className="flex items-center space-x-4 text-sm text-gray-400">
+                <Link
+                  to="/guest-dashboard"
+                  className="flex items-center space-x-1 hover:text-cyan-400 transition-colors"
+                >
+                  <Eye className="h-4 w-4" />
+                  <span>Preview Dashboard</span>
+                </Link>
+                <span>•</span>
+                <span>No credit card required</span>
+              </div>
             </div>
           </div>
         </section>
 
+        {/* Rest of your existing content... */}
         <section className="py-12 sm:py-16 lg:py-20 bg-[#0a0a1a]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12">
@@ -305,56 +373,57 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Enhanced CTA Section */}
         <div className="relative text-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:30px_30px] opacity-40 z-0" />
-
           <div className="absolute inset-0 bg-gradient-radial from-blue-600/20 via-indigo-900/10 to-transparent z-0" />
 
-          
           <div className="relative z-10">
-          
             <div className="flex justify-center mb-4 sm:mb-6">
               <div className="bg-[#1f0b2e] p-3 sm:p-4 rounded-xl shadow-xl">
                 <img src="/logo.svg" alt="Logo" className="w-4 h-4 sm:w-6 sm:h-6" />
               </div>
             </div>
 
-        
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200">
-              Let's <span className="text-white">work together!</span>
+              Ready to <span className="text-white">get started?</span>
             </h2>
 
-        
             <p className="text-base sm:text-lg lg:text-xl text-gray-400 mt-3 sm:mt-4 max-w-2xl mx-auto">
-              Schedule a call with us to start your brand's trip to the stars...
-              or maybe just to talk shop.
+              Join thousands of users who trust our platform. Start your journey today
+              or explore our features as a guest.
             </p>
 
-            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 border rounded-xl px-4 sm:px-6 py-3 sm:py-4 max-w-xl mx-auto shadow-lg">
-              
-              <div className="flex items-center gap-3">
-                <img
-                  src="/avatars.png"
-                  alt="Founders"
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
-                />
-                <div className="text-left">
-                  <p className="text-xs sm:text-sm text-white font-semibold">
-                    Book a call with
-                  </p>
-                  <p className="text-xs sm:text-sm text-gray-400">Amply founders</p>
-                </div>
-              </div>
+            {/* Enhanced CTA Buttons */}
+            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+              <Link
+                to="/signup"
+                className="bg-gradient-to-r from-[#8a5cf6] to-[#525ce6] text-white font-semibold px-8 py-4 rounded-xl hover:from-[#7c52f4] hover:to-[#4a52d9] transition-all duration-200 shadow-lg hover:shadow-purple-500/25 w-full sm:w-auto"
+              >
+                Start Free Trial
+              </Link>
+              <Link
+                to="/signin"
+                className="border border-gray-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-gray-800 transition-all duration-200 w-full sm:w-auto"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/guest-dashboard"
+                className="text-cyan-400 hover:text-cyan-300 font-semibold px-8 py-4 rounded-xl border border-cyan-400/30 hover:border-cyan-300/50 transition-all duration-200 hover:bg-cyan-400/10 w-full sm:w-auto flex items-center justify-center space-x-2"
+              >
+                <Eye className="h-5 w-5" />
+                <span>Try as Guest</span>
+              </Link>
+            </div>
 
-              
-              <button className="bg-white text-black font-semibold px-4 sm:px-5 py-2 rounded-lg border-2 border-[#aa39ff] hover:bg-gray-100 transition w-full sm:w-auto mt-3 sm:mt-0">
-                Book a Call
-              </button>
+            <div className="mt-6 text-sm text-gray-500">
+              No credit card required • Free 14-day trial • Cancel anytime
             </div>
           </div>
         </div>
 
-        
+        {/* Footer remains the same... */}
         <footer className="bg-gradient-to-tr from-[#0a0a1a] via-blue-950 to-[#0a0a1a] py-12 pb-20 sm:pb-40 lg:pb-80">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
